@@ -1,0 +1,171 @@
+<div class="profile-card">
+  <mat-card class="profile-card-container">
+    <!-- Image Upload -->
+    <div class="image-wrapper">
+      <img
+        *ngIf="profileImageUrl; else placeholder"
+        [src]="profileImageUrl"
+        alt="Profile"
+        class="profile-image"
+      />
+      <ng-template #placeholder>
+        <div class="image-placeholder">No Image</div>
+      </ng-template>
+      <button mat-stroked-button color="primary" (click)="fileInput.click()">
+        Choose
+      </button>
+      <input
+        #fileInput
+        type="file"
+        accept="image/*"
+        hidden
+        (change)="onFileSelected($event)"
+      />
+    </div>
+
+    <!-- Info -->
+    <mat-card-content class="profile-preview">
+      <div class="editable-field">
+        <strong>Name:</strong>
+        <span *ngIf="!editMode.name" (click)="toggleEdit('name')">{{
+          name
+        }}</span>
+        <mat-icon
+          *ngIf="!editMode.name"
+          (click)="toggleEdit('name')"
+          class="edit-icon"
+          >edit</mat-icon
+        >
+        <input
+          *ngIf="editMode.name"
+          [(ngModel)]="name"
+          (keydown.enter)="toggleEdit('name')"
+        />
+      </div>
+
+      <div class="editable-field">
+        <strong>Age:</strong>
+        <span *ngIf="!editMode.age" (click)="toggleEdit('age')">{{ age }}</span>
+        <mat-icon
+          *ngIf="!editMode.age"
+          (click)="toggleEdit('age')"
+          class="edit-icon"
+          >edit</mat-icon
+        >
+        <input
+          *ngIf="editMode.age"
+          type="number"
+          [(ngModel)]="age"
+          (keydown.enter)="toggleEdit('age')"
+        />
+      </div>
+
+      <div class="editable-field">
+        <strong>About:</strong>
+        <span
+          *ngIf="!editMode.description"
+          (click)="toggleEdit('description')"
+          >{{ description }}</span
+        >
+        <mat-icon
+          *ngIf="!editMode.description"
+          (click)="toggleEdit('description')"
+          class="edit-icon"
+          >edit</mat-icon
+        >
+        <textarea
+          *ngIf="editMode.description"
+          rows="2"
+          [(ngModel)]="description"
+          (keydown.enter)="toggleEdit('description')"
+        ></textarea>
+      </div>
+    </mat-card-content>
+
+    <!-- Link List -->
+    <div class="social-link-list">
+      <h4>Links</h4>
+      <div *ngFor="let link of socialLinks" class="social-link">
+        <a [href]="link.url" target="_blank">{{ link.platform }}</a>
+        <button mat-icon-button color="warn" (click)="removeSocialLink(link)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Add Link -->
+    <mat-expansion-panel
+      [expanded]="socialPanelExpanded"
+      (opened)="socialPanelExpanded = true"
+      (closed)="socialPanelExpanded = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>Add Link</mat-panel-title>
+        <mat-panel-description>New platform</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="social-links">
+        <mat-form-field appearance="fill">
+          <mat-label>Platform</mat-label>
+          <input matInput [(ngModel)]="newSocialLink.platform" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>URL</mat-label>
+          <input matInput [(ngModel)]="newSocialLink.url" />
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="addSocialLink()">
+          Add
+        </button>
+      </div>
+    </mat-expansion-panel>
+
+    <!-- Custom Sections -->
+    <div class="custom-section-list">
+      <h4>Sections</h4>
+      <mat-card
+        *ngFor="let section of customSections; let i = index"
+        class="custom-section-card"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ section.title }}</mat-card-title>
+          <button mat-icon-button color="warn" (click)="removeSection(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-header>
+        <mat-card-content>{{ section.content }}</mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Add Section -->
+    <mat-expansion-panel
+      [expanded]="showAddSection"
+      (opened)="showAddSection = true"
+      (closed)="showAddSection = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>Add Section</mat-panel-title>
+        <mat-panel-description>Personal info or projects</mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="add-section">
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput [(ngModel)]="newSection.title" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Content</mat-label>
+          <textarea
+            matInput
+            rows="2"
+            [(ngModel)]="newSection.content"
+          ></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" (click)="addCustomSection()">
+          Add
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-card>
+</div>

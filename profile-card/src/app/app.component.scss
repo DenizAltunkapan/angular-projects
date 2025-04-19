@@ -1,0 +1,166 @@
+.profile-card {
+  max-width: 480px;
+  margin: 1px auto;
+  padding: 16px;
+}
+
+.profile-card-container {
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+
+  button {
+    margin-top: 12px;
+  }
+
+  div {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.profile-image,
+.image-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.editable-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  strong {
+    margin-right: 6px;
+  }
+
+  span {
+    flex-grow: 1;
+  }
+
+  .edit-icon {
+    cursor: pointer;
+    margin-left: 8px;
+    color: #007bff;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0056b3;
+    }
+  }
+}
+
+.profile-preview {
+  background-color: #fafafa;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  margin-top: 16px;
+}
+
+mat-expansion-panel {
+  margin-bottom: 16px;
+}
+
+button {
+  margin-left: 8px;
+}
+
+.social-link-list {
+  margin-top: 24px;
+
+  h4 {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+  }
+
+  .social-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3f3f3;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 14px;
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+  }
+}
+
+.add-section {
+  margin-top: 16px;
+}
+
+.custom-section-list {
+  margin-top: 24px;
+
+  h4 {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #444;
+  }
+
+  .custom-section-card {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background-color: #fefefe;
+
+    mat-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    mat-card-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    mat-card-content {
+      font-size: 14px;
+      color: #555;
+    }
+  }
+}
