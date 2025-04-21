@@ -1,6 +1,8 @@
-# ProfileCard
+# TicTacToe
 
-ProfileCard is a modern, dynamic profile component built with Angular and Angular Material. It allows users to create a visually appealing profile card with editable personal information, profile image upload, social links, and custom sections.
+Tic Tac Toe is a simple and classic 3x3 grid game where two players take turns marking "X" and "O" in the cells of the grid, starting with player "X". The player who places three of their marks in a row, column, or diagonal first wins the game. If all the cells are filled without a winner, the game ends in a draw. The game can be restarted at any time by clicking the "New Game" button.
+
+This project was built with Angular and styled using Tailwind CSS for a modern and responsive design.
 
 ![Preview](image.png)
 
@@ -13,7 +15,7 @@ git clone https://github.com/DenizAltunkapan/angular-projects.git
 then type
 
 ```bash
-cd profile-card
+cd tic-tac-toe
 ```
 
 ## Install packages
@@ -60,6 +62,9 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 For more information on using Angular, visit the official documentation:  
 [Angular Documentation](https://angular.dev)
+
+For more information on Tailwind CSS, visit the official documentation:  
+[Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
 For more information on Angular CLI commands and tools, visit the official CLI reference:  
 [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli)

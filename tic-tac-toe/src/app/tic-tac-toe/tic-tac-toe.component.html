@@ -1,0 +1,38 @@
+<div class="min-h-screen flex items-center justify-center p-4">
+  <div class="text-center">
+    <h1 class="text-3xl font-bold mb-6">Tic-Tac-Toe</h1>
+
+    <!-- Game Board with fixed cells -->
+    <div class="grid grid-cols-3 gap-2 w-90 h-90">
+      <button
+        *ngFor="let cell of board; let i = index"
+        (click)="makeMove(i)"
+        class="flex items-center justify-center bg-white text-3xl font-bold border rounded-lg shadow hover:bg-gray-100 transition w-30 h-30"
+      >
+        {{ cell }}
+      </button>
+    </div>
+
+    <!-- Game Status -->
+    <div class="mt-6 text-2xl font-medium">
+      <ng-container *ngIf="winner; else noWinner">
+        🎉 Winner: <span class="font-bold">{{ winner }}</span>
+      </ng-container>
+
+      <ng-template #noWinner>
+        <p *ngIf="isDraw">🤝 Draw!</p>
+        <p *ngIf="!isDraw">
+          Current Player: <span class="font-bold">{{ currentPlayer }}</span>
+        </p>
+      </ng-template>
+    </div>
+
+    <!-- Reset Button -->
+    <button
+      class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+      (click)="resetGame()"
+    >
+      New Game
+    </button>
+  </div>
+</div>
