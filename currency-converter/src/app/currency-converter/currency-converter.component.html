@@ -1,0 +1,88 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="w-full max-w-xl p-8 bg-white rounded-xl shadow-lg">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
+      Currency Converter
+    </h2>
+
+    <div class="space-y-5">
+      <!-- Currency Select Inputs -->
+      <div class="space-y-4">
+        <div>
+          <label
+            for="sourceCurrency"
+            class="block text-sm font-medium text-gray-700 mb-1"
+            >From:</label
+          >
+          <select
+            id="sourceCurrency"
+            [(ngModel)]="sourceCurrency"
+            (ngModelChange)="updateConversionRate()"
+            class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          >
+            <option *ngFor="let currency of currencies" [value]="currency">
+              {{ getFlagAndCurrency(currency) }}
+            </option>
+          </select>
+        </div>
+
+        <div>
+          <label
+            for="targetCurrency"
+            class="block text-sm font-medium text-gray-700 mb-1"
+            >To:</label
+          >
+          <select
+            id="targetCurrency"
+            [(ngModel)]="targetCurrency"
+            (ngModelChange)="updateConversionRate()"
+            class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          >
+            <option *ngFor="let currency of currencies" [value]="currency">
+              {{ getFlagAndCurrency(currency) }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Amount Input -->
+      <div>
+        <label for="amount" class="block text-sm font-medium text-gray-700 mb-1"
+          >Amount:</label
+        >
+        <input
+          type="number"
+          id="amount"
+          [(ngModel)]="amount"
+          (ngModelChange)="updateConversionRate()"
+          placeholder="Enter amount"
+          class="w-full p-2 border rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
+
+      <!-- Converted Amount Output -->
+      <div>
+        <label
+          for="convertedAmount"
+          class="block text-sm font-medium text-gray-700 mb-1"
+          >Converted Amount:</label
+        >
+        <input
+          type="text"
+          id="convertedAmount"
+          [value]="result | currency: targetCurrency"
+          readonly
+          class="w-full p-2 border rounded-md bg-gray-100 text-gray-600"
+          placeholder="Converted Amount"
+        />
+      </div>
+    </div>
+
+    <!-- Conversion Rate Info -->
+    <div *ngIf="conversionRate !== null" class="mt-6 text-center text-gray-700">
+      <p>
+        <strong class="font-medium">Conversion Rate:</strong>
+        {{ conversionRate | number: "1.2-2" }}
+      </p>
+    </div>
+  </div>
+</div>
