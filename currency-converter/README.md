@@ -1,6 +1,39 @@
 # CurrencyConverter
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+CurrencyConverter is a modern Angular application that allows users to quickly and easily convert between multiple currencies. The app supports a selection of the most important international currencies.
+
+Supported currencies:
+
+- USD – United States Dollar  
+- EUR – Euro  
+- GBP – British Pound Sterling  
+- INR – Indian Rupee  
+- JPY – Japanese Yen  
+- CHF – Swiss Franc  
+- CNY – Chinese Yuan  
+- AUD – Australian Dollar  
+- CAD – Canadian Dollar  
+- TRY – Turkish Lira
+
+![Preview](preview.gif)
+
+## Clone this Repository
+
+```bash
+git clone https://github.com/YourUsername/currency-converter.git
+```
+
+then type
+
+```bash
+cd profile-card
+```
+
+## Install packages
+
+```bash
+npm install
+```
 
 ## Development server
 
@@ -36,24 +69,10 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more information on using Angular, visit the official documentation:  
+[Angular Documentation](https://angular.dev)
+
+For more information on Angular CLI commands and tools, visit the official CLI reference:  
+[Angular CLI Overview and Command Reference](https://angular.dev/tools/cli)
