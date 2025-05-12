@@ -13,7 +13,8 @@ Each subfolder contains an independent Angular app – some using SCSS, some Tai
 | profile-card   | A simple, responsive profile card UI       | [View](./profile-card)        |
 | tic-tac-toe    | A classic Tic-Tac-Toe game                 | [View](./tic-tac-toe)         |
 | rock-paper-scissors | A classic Rock Paper Scissors game    | [View](./rock-paper-scissors) |
-| calculator     | A simple calculator for basic arithmetic   | [View](./calculator) |
+| calculator     | A simple calculator for basic arithmetic   | [View](./calculator)          |
+| currency-converter    | A converter for different currencies| [View](./currency-converter)  |
 
 ## Getting Started
 

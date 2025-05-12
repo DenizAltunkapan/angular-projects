@@ -20,7 +20,7 @@ Supported currencies:
 ## Clone this Repository
 
 ```bash
-git clone https://github.com/YourUsername/currency-converter.git
+git clone https://github.com/DenizAltunkapan/angular-projects.git
 ```
 
 then type
