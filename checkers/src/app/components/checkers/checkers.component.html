@@ -1,0 +1,80 @@
+<div
+  class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4"
+>
+  <h1 class="text-3xl font-bold mb-6">Checkers</h1>
+
+  <div
+    class="grid grid-cols-8 gap-1 bg-black rounded-lg overflow-hidden shadow-lg"
+  >
+    <div
+      *ngFor="let row of gameService.board; let rowIndex = index"
+      class="contents"
+    >
+      <div
+        *ngFor="let cell of row; let colIndex = index"
+        (click)="onCellClick(rowIndex, colIndex)"
+        [ngClass]="{
+          'bg-gray-300': (rowIndex + colIndex) % 2 === 0,
+          'bg-gray-700': (rowIndex + colIndex) % 2 === 1,
+          'ring-4 ring-blue-400': isSelected(rowIndex, colIndex),
+        }"
+        class="w-14 h-14 flex items-center justify-center cursor-pointer transition-transform hover:scale-105"
+      >
+        <div
+          *ngIf="cell"
+          [ngClass]="{
+            'bg-white': cell.includes('white'),
+            'bg-black': cell.includes('black'),
+            'ring-4 ring-yellow-400': cell.includes('king'),
+            'border-2 border-blue-500':
+              gameService.currentPlayer === 'white' && cell.includes('white'),
+            'border-2 border-red-600':
+              gameService.currentPlayer === 'black' && cell.includes('black'),
+            'ring-2 ring-blue-300':
+              gameService.currentPlayer === 'white' &&
+              cell.includes('white') &&
+              !gameService.selectedPiece,
+            'ring-2 ring-red-300':
+              gameService.currentPlayer === 'black' &&
+              cell.includes('black') &&
+              !gameService.selectedPiece,
+            'opacity-100':
+              (gameService.currentPlayer === 'white' &&
+                cell.includes('white')) ||
+              (gameService.currentPlayer === 'black' && cell.includes('black')),
+            'opacity-70':
+              !(
+                gameService.currentPlayer === 'white' && cell.includes('white')
+              ) &&
+              !(
+                gameService.currentPlayer === 'black' && cell.includes('black')
+              ),
+          }"
+          class="w-10 h-10 rounded-full transition-all duration-200"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 flex items-center gap-4">
+    <button
+      (click)="resetGame()"
+      class="px-6 py-4 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+    >
+      New Game
+    </button>
+    <span class="text-lg text-gray-600">
+      Current Player:
+      <span>
+        {{ gameService.currentPlayer | uppercase }}
+      </span>
+    </span>
+  </div>
+
+  <div
+    *ngIf="gameService.gameOver"
+    class="mt-4 text-red-600 text-xl font-semibold"
+  >
+    Game Over!
+  </div>
+</div>
