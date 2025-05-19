@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.pw-checker-header {
+  @apply flex justify-center items-center p-4 bg-[#f9f9f9] rounded-lg m-5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    @apply text-3xl text-[#333] underline;
+  }
+}
