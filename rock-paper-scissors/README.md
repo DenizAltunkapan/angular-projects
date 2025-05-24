@@ -2,6 +2,7 @@
 
 Rock Paper Scissors is a classic hand game where the player competes against the computer.  
 The player chooses one of three options: **Rock**, **Paper**, or **Scissors**. The rules are simple:
+
 - Rock crushes Scissors
 - Scissors cuts Paper
 - Paper covers Rock

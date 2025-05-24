@@ -8,18 +8,21 @@ Each subfolder contains an independent Angular app – some using SCSS, some Tai
 
 ## Projects
 
-| Name           | Description                                | Link                          |
-|----------------|--------------------------------------------|-------------------------------|
-| profile-card   | A simple, responsive profile card UI       | [View](./profile-card)        |
-| tic-tac-toe    | A classic Tic-Tac-Toe game                 | [View](./tic-tac-toe)         |
-| rock-paper-scissors | A classic Rock Paper Scissors game    | [View](./rock-paper-scissors) |
-| calculator     | A simple calculator for basic arithmetic   | [View](./calculator)          |
-| currency-converter    | A converter for different currencies| [View](./currency-converter)  |
+| Name                | Description                                                          | Link                          |
+| ------------------- | -------------------------------------------------------------------- | ----------------------------- |
+| profile-card        | A simple, responsive profile card UI                                 | [View](./profile-card)        |
+| tic-tac-toe         | A classic Tic-Tac-Toe game                                           | [View](./tic-tac-toe)         |
+| rock-paper-scissors | A classic Rock Paper Scissors game                                   | [View](./rock-paper-scissors) |
+| calculator          | A simple calculator for basic arithmetic                             | [View](./calculator)          |
+| currency-converter  | A converter for different currencies                                 | [View](./currency-converter)  |
+| checkers            | The traditional two-player checkers game                             | [View](./checkers)            |
+| password-checker    | Generate secure passwords and check breaches using Have I Been Pwned | [View](./password-checker)    |
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js 
+
+- Node.js
 - npm
 - Angular CLI
 

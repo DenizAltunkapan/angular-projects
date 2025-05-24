@@ -4,15 +4,15 @@ CurrencyConverter is a modern Angular application that allows users to quickly a
 
 Supported currencies:
 
-- USD – United States Dollar  
-- EUR – Euro  
-- GBP – British Pound Sterling  
-- INR – Indian Rupee  
-- JPY – Japanese Yen  
-- CHF – Swiss Franc  
-- CNY – Chinese Yuan  
-- AUD – Australian Dollar  
-- CAD – Canadian Dollar  
+- USD – United States Dollar
+- EUR – Euro
+- GBP – British Pound Sterling
+- INR – Indian Rupee
+- JPY – Japanese Yen
+- CHF – Swiss Franc
+- CNY – Chinese Yuan
+- AUD – Australian Dollar
+- CAD – Canadian Dollar
 - TRY – Turkish Lira
 
 ![Preview](preview.gif)
