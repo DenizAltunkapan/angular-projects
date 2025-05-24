@@ -1,12 +1,11 @@
-<div class="calculator w-80 mx-auto mt-10 rounded-2xl overflow-hidden dark:shadow-[0_10px_25px_rgba(0,0,0,0.9)]">
+<div
+  class="calculator w-80 mx-auto mt-10 rounded-2xl overflow-hidden dark:shadow-[0_10px_25px_rgba(0,0,0,0.9)]"
+>
   <app-display [value]="display" [history]="history"></app-display>
   <div class="grid grid-cols-4 gap-3 p-4 bg-gray-800">
     <ng-container *ngFor="let row of buttonLayout">
       <ng-container *ngFor="let button of row">
-        <button 
-          (click)="handleInput(button)"
-          [class]="getButtonClass(button)"
-        >
+        <button (click)="handleInput(button)" [class]="getButtonClass(button)">
           {{ button }}
         </button>
       </ng-container>

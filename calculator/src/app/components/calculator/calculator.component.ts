@@ -8,7 +8,7 @@ import { CalculatorService } from '../../services/calculator.service';
   standalone: true,
   imports: [CommonModule, DisplayComponent],
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.scss']
+  styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
   buttonLayout: string[][] = [
@@ -16,7 +16,7 @@ export class CalculatorComponent {
     ['7', '8', '9', '*'],
     ['4', '5', '6', '-'],
     ['1', '2', '3', '+'],
-    ['0', '.', '=']
+    ['0', '.', '='],
   ];
 
   constructor(private calculatorService: CalculatorService) {}
@@ -28,7 +28,6 @@ export class CalculatorComponent {
   get history() {
     return this.calculatorService.history;
   }
-
 
   handleInput(input: string) {
     if (input === 'C') {
@@ -43,8 +42,9 @@ export class CalculatorComponent {
   }
 
   getButtonClass(button: string): string {
-    let baseClass = 'text-xl font-semibold py-4 rounded-lg transition-all duration-200 active:scale-95 ';
-    
+    let baseClass =
+      'text-xl font-semibold py-4 rounded-lg transition-all duration-200 active:scale-95 ';
+
     if (button === '=') {
       return baseClass + 'bg-gray-400 hover:bg-gray-500 text-white col-span-2';
     } else if (['+', '-', '*', '/', '%'].includes(button)) {
