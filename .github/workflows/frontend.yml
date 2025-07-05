@@ -31,16 +31,16 @@ jobs:
         with:
           node-version: 18
           cache: "npm"
-          cache-dependency-path: frontend/${{ matrix.project }}/package-lock.json
+          cache-dependency-path: ${{ matrix.project }}/package-lock.json
 
       - name: Install dependencies
-        working-directory: frontend/${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
         run: npm ci
 
       - name: Format code with Prettier
-        working-directory: frontend/${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
         run: npx prettier --write .
 
       - name: Build project
-        working-directory: frontend/${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
         run: npm run build
