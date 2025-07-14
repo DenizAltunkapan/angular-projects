@@ -32,7 +32,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Angular CLI specific files
-angular.json
 tsconfig.json
 tslint.json
 
