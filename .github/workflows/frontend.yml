@@ -24,7 +24,8 @@ jobs:
           - password-checker
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -37,10 +38,10 @@ jobs:
         working-directory: ${{ matrix.project }}
         run: npm ci
 
-      - name: Format code with Prettier
+      - name: Check code formatting with Prettier
         working-directory: ${{ matrix.project }}
-        run: npx prettier --write .
+        run: npx prettier --check .
 
       - name: Build project
         working-directory: ${{ matrix.project }}
-        run: npm run build
+        run: npx ng build
