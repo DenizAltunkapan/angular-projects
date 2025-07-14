@@ -32,7 +32,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Angular CLI specific files
-tsconfig.json
 tslint.json
 
 # Coverage directory for code coverage reports
