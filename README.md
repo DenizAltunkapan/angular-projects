@@ -1,9 +1,8 @@
 # Angular Projects
 
-[![Angular Version](https://img.shields.io/badge/Angular-19-DD0031.svg?logo=angular&style=flat)](https://angular.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](https://opensource.org/licenses/MIT)
 
-A collection of small Angular-based projects (Angular 19) for learning, inspiration, or reuse.
+A collection of small Angular-based projects for learning, inspiration, or reuse.
 Each subfolder contains an independent Angular app – some using SCSS, some Tailwind CSS – and comes with its own README.
 
 ## Projects
